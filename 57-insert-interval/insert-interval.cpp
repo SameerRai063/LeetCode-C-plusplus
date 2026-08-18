@@ -14,8 +14,8 @@ public:
                 return results;
             }
             else {
-                newInterval[0] = min(newInterval[0], intervals[i][0]);
-                newInterval[1] = max(newInterval[1], intervals[i][1]);
+                newInterval[0] = newInterval[0] < intervals[i][0] ? newInterval[0] : intervals[i][0];
+                newInterval[1] = newInterval[1] > intervals[i][1] ? newInterval[1] : intervals[i][1];
             }
         }
         results.push_back(newInterval);
